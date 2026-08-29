@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --header-h: 72px;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+.font-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+  border: 2px solid #f1f5f9;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-200 select-none disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply bg-ink-900 text-white hover:bg-ink-800 active:scale-[0.98] px-6 py-3 text-sm shadow-sm hover:shadow-md;
+  }
+  .btn-gold {
+    @apply bg-gold-400 text-ink-900 hover:bg-gold-300 active:scale-[0.98] px-6 py-3 text-sm font-semibold shadow-sm hover:shadow-md;
+  }
+  .btn-outline {
+    @apply border border-ink-300 text-ink-800 hover:border-ink-900 hover:text-ink-900 px-6 py-3 text-sm bg-white/0 hover:bg-white;
+  }
+  .btn-ghost {
+    @apply text-ink-700 hover:bg-ink-100 px-4 py-2 text-sm;
+  }
+  .card {
+    @apply rounded-2xl bg-white ring-1 ring-ink-200/70 shadow-sm;
+  }
+  .input {
+    @apply w-full rounded-xl border border-ink-300 bg-white px-4 py-3 text-sm text-ink-900 placeholder-ink-400 transition focus:border-ink-900 focus:ring-2 focus:ring-ink-900/10 focus:outline-none;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-ink-700;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium;
+  }
+  .link-underline {
+    @apply relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full;
+  }
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .skeleton {
+    background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 37%, #f1f5f9 63%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s linear infinite;
+  }
+}
