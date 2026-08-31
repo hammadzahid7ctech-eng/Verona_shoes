@@ -5,9 +5,9 @@ export const BRAND = {
   full: 'VÉRONA Footwear',
   tagline: 'Step Into Your Style',
   email: 'care@verona.pk',
-  phone: '+92 300 1234567',
+  phone: '0341083957',
   address: 'Liberty Market, Gulberg III, Lahore, Punjab 54660',
-  whatsapp: '+92 300 1234567',
+  whatsapp: '+92341083957',
 };
 
 export const COUPONS: Coupon[] = [
